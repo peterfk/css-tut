@@ -16,6 +16,16 @@ body {
     padding: 1rem;
 }
 
+/* Images */
+.big-cat-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Simple typography */
 h1 {
     color: #0069d9;
@@ -79,7 +89,7 @@ header {
     /* stronger shadow to lift the header from the page */
     box-shadow: 0 10px 30px rgba(2, 10, 30, 0.22);
     text-align: center;
-    min-height: 180px;
+    min-height: 680px;
 }
 
 header h1 {
