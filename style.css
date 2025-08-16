@@ -43,3 +43,116 @@ footer {
     margin: 0 auto;
     padding: 1rem;
 }
+
+/* Theme variables */
+:root {
+    --page-bg: #f3f6f9;
+    --card-bg: #ffffff;
+    --accent: #0d6efd;
+    --muted: #6c757d;
+    --text: #212529;
+}
+
+/* Page base */
+body {
+    background: linear-gradient(180deg, var(--page-bg) 0%, #ffffff 60%);
+    color: var(--text);
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+    /* background fallbacks (local -> Unsplash -> gradient) */
+    /* Place a local image at `images/lion.jpg` to prefer it locally */
+    background-image:
+        linear-gradient(rgba(3, 12, 27, 0.55), rgba(3, 12, 27, 0.35)),
+        url('images/lion.jpg'),
+        url('https://source.unsplash.com/1600x900/?lion');
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    color: #fff;
+    padding: 2.5rem 1.25rem;
+    border-radius: 12px;
+    /* stronger shadow to lift the header from the page */
+    box-shadow: 0 10px 30px rgba(2, 10, 30, 0.22);
+    text-align: center;
+    min-height: 180px;
+}
+
+header h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0;
+    line-height: 1.05;
+    /* stronger text shadow for photo backgrounds */
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Main area */
+main {
+    margin-top: 1.25rem;
+    display: grid;
+    gap: 1rem;
+    padding: 0 0.25rem 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    color: #0b223f;
+    position: relative;
+}
+
+/* Decorative accent for headings */
+h2::after {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 4px;
+    background: var(--accent);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+/* Paragraphs as cards */
+main p {
+    background: var(--card-bg);
+    padding: 1rem 1.15rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(16, 24, 40, 0.04);
+    color: var(--text);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+main p+p {
+    margin-top: 0.6rem;
+}
+
+main p:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Small screens: reduce padding and card radius */
+@media (max-width: 520px) {
+    header {
+        padding: 1.25rem 0.75rem;
+    }
+
+    main p {
+        padding: 0.9rem;
+    }
+}
